@@ -1,0 +1,20 @@
+{
+	"name": "listy",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"dependencies": {
+		"commander": "^2.7.1",
+		"lodash": "^3.5.0"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Kuba Wyrobek<kuba.wyrobek@gmail.com>",
+	"preferGlobal": true,
+	"bin": {
+		"juggler": "juggler.js"
+	},
+	"license": "ISC"
+}
