@@ -1,8 +1,8 @@
 {
-  "name": "listy",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "emails-juggler",
+  "version": "0.1.0",
+  "description": "A small cli for merging email lists.",
+  "main": "juggler.js",
   "dependencies": {
     "commander": "^2.7.1",
     "is_js": "^0.7.1",
@@ -13,12 +13,12 @@
     "mocha": "^2.2.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test"
   },
   "author": "Kuba Wyrobek<kuba.wyrobek@gmail.com>",
   "preferGlobal": true,
   "bin": {
-    "juggler": "juggler.js"
+    "emails-juggler": "juggler.js"
   },
-  "license": "ISC"
+  "license": "MIT"
 }

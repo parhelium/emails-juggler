@@ -2,7 +2,7 @@ var _ = require( 'lodash' );
 var fs = require( 'fs' );
 var is = require( 'is_js' );
 
-var parseEmails =  function ( filePath ) {
+var parseEmails = function ( filePath ) {
     var file = fs.readFileSync( filePath ).toString();
     var lines = file.split( "\n" );
     var emails = [];
@@ -14,7 +14,7 @@ var parseEmails =  function ( filePath ) {
             //console.warn( "At line : " + index + " : This is not email ->  ", email );
         }
     } )
-    return emails;
+    return emails.sort();
 };
 
 var mergeFiles = function ( files ) {
@@ -26,10 +26,10 @@ var mergeFiles = function ( files ) {
     } catch ( e ) {
         console.error( 'mergeFiles : Cannot proceed : ', e )
     }
-    return _.uniq( emails );
+    return _.uniq( emails ).sort();
 }
 
 module.exports = {
-    parseEmails : parseEmails,
+    parseEmails: parseEmails,
     mergeFiles: mergeFiles
 }

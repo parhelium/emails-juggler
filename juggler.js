@@ -12,28 +12,28 @@ function parseList( val ) {
 program
     .version( '0.0.1' )
     .option( '-s, --sources <items>', 'A list of source files.', parseList )
-    .option( '-d, --diff <items>', 'Returns difference between diff and sources', parseList )
+    .option( '-b, --blacklists <items>', 'Returns difference between diff and sources', parseList )
     .parse( process.argv );
 
 
-console.log( ' sources: ', program.sources );
-console.log( ' sources: ', program.diff );
+var run = function( sources, blacklists ){
+    var uniqSourceEmails = [];
+    var uniqBlacklistsEmails = [];
+    var emails = [];
 
+    uniqSourceEmails = parser.mergeFiles( sources );
+    emails = uniqSourceEmails;
 
-
-var uniqGoodEmails = [];
-var uniqBadEmail = [];
-var emails = [];
-
-
-uniqGoodEmails = parser.mergeFiles( program.sources );
-
-console.log( 'sources amount of emails :  ', uniqGoodEmails.length )
-emails = uniqGoodEmails;
-
-if ( program.diff && is.array( program.diff ) ) {
-    uniqBadEmail = parser.mergeFiles( program.diff );
-    emails = _.difference( uniqGoodEmails, uniqBadEmail )
+    if ( blacklists && is.array( blacklists ) ) {
+        uniqBlacklistsEmails = parser.mergeFiles( blacklists );
+        emails = _.difference( uniqSourceEmails, uniqBlacklistsEmails )
+    }
+    return emails.sort().join("\n");
 }
-console.log( 'emails to remove amount : ', uniqBadEmail.length )
-console.log( 'sources - diff emails amount : ', uniqGoodEmails.length )
+
+module.exports = {
+    run : run
+}
+
+var result = run(program.sources, program.blacklists)
+console.log(result);
