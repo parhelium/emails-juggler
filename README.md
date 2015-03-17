@@ -5,16 +5,18 @@ A small cli for merging email lists.
 
 ## Installation
 
-  npm install emails-juggler -g
+    npm install emails-juggler -g
 
 ## Usage
 
-  emails-juggler -s source1.csv -b blacklist1.csv
-  emails-juggler -s source1.csv,source2.csv -b blacklist1.csv,blacklist2.csv
+
+    emails-juggler -s source1.csv -b blacklist1.csv
+    emails-juggler -s source1.csv,source2.csv -b blacklist1.csv,blacklist2.csv
+
 
 ## Tests
 
-  npm test
+    npm test
 
 ## Contributing
 
