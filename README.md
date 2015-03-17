@@ -11,7 +11,8 @@ A small cli for merging email lists.
 
 
     emails-juggler -s source1.csv -b blacklist1.csv
-    emails-juggler -s source1.csv,source2.csv -b blacklist1.csv,blacklist2.csv
+    emails-juggler -s source1.csv,source2.csv -b blacklist1.csv,blacklist2.csv > result.csv
+    emails-juggler -s source1.csv,source2.csv -b blacklist1.csv,blacklist2.csv | grep some@email.com
 
 
 ## Tests
