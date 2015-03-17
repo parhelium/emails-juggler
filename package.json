@@ -1,6 +1,6 @@
 {
   "name": "emails-juggler",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A small cli for merging email lists.",
   "main": "juggler.js",
   "dependencies": {
